@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const ChoosenName = styled.p`
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 4rem;
+  color: #fff;
 `;
 
 export const Randomize = styled.button`
@@ -11,4 +12,10 @@ export const Randomize = styled.button`
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #fff;
+    color: #333;
+  }
 `;

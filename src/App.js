@@ -6,7 +6,7 @@ import { fetchNames } from './logic/jsonStoreApi';
 import Roulette from './components/Roulette';
 import Admin from './components/Admin';
 
-import './App.css';
+import { AppContent, Title } from './appStyledComponent';
 
 class App extends Component {
   state = {
@@ -21,17 +21,16 @@ class App extends Component {
     const {
       data: { result },
     } = await fetchNames();
-    if (result) {
-      this.setState({
-        names: result,
-      });
-    }
+
+    this.setState({
+      names: result ? result : {},
+    });
   }
 
   render() {
     return (
-      <div className="App">
-        <h1>Roulette</h1>
+      <AppContent>
+        <Title>Roulette</Title>
         <BrowserRouter>
           <Switch>
             <Route
@@ -52,7 +51,7 @@ class App extends Component {
             />
           </Switch>
         </BrowserRouter>
-      </div>
+      </AppContent>
     );
   }
 }
